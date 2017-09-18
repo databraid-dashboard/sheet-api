@@ -14,15 +14,6 @@ const schema = buildSchema(`
     sheetName: String
     range: String
     values: [[String]]
-    rows: [Row]
-  }
-
-  type Row {
-    cells: [Cell]
-  }
-
-  type Cell {
-    data: String
   }
 
   type Query {
