@@ -8,4 +8,4 @@ services:
       - .:/app
     command: npm run dev
     ports:
-      - 8001:8001
+      - 8003:8003

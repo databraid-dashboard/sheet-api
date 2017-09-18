@@ -5,7 +5,7 @@ const root = require('./src/resolvers/RootResolver');
 const schema = require('./src/schema');
 
 const app = express();
-const PORT = process.env.PORT || 8001;
+const PORT = process.env.PORT || 8003;
 
 app.use(bodyParser.json());
 
