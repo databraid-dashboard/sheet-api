@@ -5,17 +5,16 @@ const session = require('express-session');
 const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-// const graphqlHTTP = require('express-graphql');
-// const root = require('./src/resolvers/RootResolver');
-// const schema = require('./src/schema/schema');
+const graphqlHTTP = require('express-graphql');
+const root = require('./src/resolvers/RootResolver');
+const schema = require('./src/schema');
 const partials = require('express-partials');
 const cors = require('cors');
-
 const app = express();
+
 const PORT = process.env.PORT || 8000;
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_SHEETS_CLIENT_ID;
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_SHEETS_CLIENT_SECRET;
-
 /* eslint-disable no-unused-vars */
 // NOTE these variables will be used once the OAuth strategy begins, not before
 const CALLBACK_URL = process.env.GOOGLE_SHEETS_URL;
@@ -72,6 +71,18 @@ app.get('/auth/google/callback',
     res.redirect(process.env.FRONT_END_BASE_URL);
   });
 
+  app.use(
+    '/graphql',
+    graphqlHTTP({
+      schema,
+      rootValue: root,
+      graphiql: true,
+    }),
+  );
+
+app.use('/', (req, res) => {
+  res.sendStatus(200);
+});
 app.use((req, res) => {
   res.sendStatus(404);
 });
