@@ -2,10 +2,9 @@ const data = require('../mockdata');
 const Sheet = require('./Sheet');
 /* eslint-disable class-methods-use-this */
 
-console.log(data.SPREADSHEET_DATA.sheets);
 
 class Spreadsheet {
-  constructor({ spreadsheetId }) {
+  constructor(spreadsheetId) {
     this.spreadsheetId = spreadsheetId;
     this.spreadSheetData = data.SPREADSHEET_DATA;
   }

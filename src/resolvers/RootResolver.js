@@ -10,6 +10,7 @@ const root = {
   sheet(sheetName) {
     return new Sheet(sheetName);
   },
+
   spreadsheet(spreadsheetId) {
     return new Spreadsheet(spreadsheetId);
   },
