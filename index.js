@@ -41,7 +41,6 @@ app.use(
 
 app.use('/', (req, res) => {
   res.sendStatus(200);
-  console.log('hello');
 });
 app.use((req, res) => {
   res.sendStatus(404);

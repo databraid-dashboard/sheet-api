@@ -7,9 +7,9 @@ class Sheets {
     this.sheetName = sheetName;
   }
   get sheets() {
-    return this.sheetName ? [new Sheet(data.SHEET1_DATA)] : this.getAllUserSheets;
+    return this.sheetName ? [new Sheet(data.SHEET1_DATA)] : this.getAllUserSheets();
   }
-  get getAllUserSheets() {
+  getAllUserSheets() {
     const sheetDataArr = [data.SHEET1_DATA, data.SHEET2_DATA];
     return sheetDataArr.map(sheetData => new Sheet(sheetData));
   }
