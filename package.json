@@ -8,11 +8,14 @@
     "dev": "scripts/dev",
     "up": "scripts/up",
     "down": "scripts/down",
-    "lint": "scripts/lint"
+    "lint": "scripts/lint",
+    "production-lint": "scripts/production-lint",
+    "production-start": "scripts/production-start"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@databraid/env-util": "1.1.3",
     "body-parser": "1.17.2",
     "cookie-parser": "1.4.3",
     "cors": "2.8.4",
