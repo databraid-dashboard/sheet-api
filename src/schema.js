@@ -9,16 +9,22 @@ const schema = buildSchema(`
     spreadsheetId: String
     sheets: [Sheet]
   }
+  type Sheets {
+    spreadsheetId: String
+    sheetName: String
+    sheets: [Sheet]
+  }
 
   type Sheet {
     sheetName: String
     range: String
+    majorDimension: String
     values: [[String]]
   }
 
   type Query {
     user(userName: String): User
-    sheet(sheetName: String): Sheet
+    sheets(spreadsheetId: String, sheetName: String): Sheets
     spreadsheet(spreadsheetId: String): Spreadsheet
   }
 `);

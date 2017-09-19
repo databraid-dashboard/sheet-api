@@ -3,8 +3,8 @@ const { expect } = require('chai');
 const Spreadsheet = require('../src/models/Spreadsheet');
 const Sheet = require('../src/models/Sheet');
 
-//TODO: ALL tests will need to be refactored when the backend is making calls
-      // to the Google API
+// TODO: ALL tests will need to be refactored when the backend is making calls
+// to the Google API
 
 describe('Spreadsheet model', () => {
   const spreadsheet = new Spreadsheet('1UcfQsQGTAAtjvyxv948z3hf0qiUnMNZF90-GcD7MF9g');

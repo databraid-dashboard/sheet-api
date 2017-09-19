@@ -25,7 +25,6 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-
 passport.serializeUser((user, done) => {
   done(null, user);
 });

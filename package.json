@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "chai": "4.1.0",
+    "dotenv": "^4.0.0",
     "mocha": "3.4.2",
     "nock": "9.0.14",
     "sinon": "3.2.1",

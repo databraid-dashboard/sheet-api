@@ -1,14 +1,14 @@
 const User = require('../models/User');
 const Spreadsheet = require('../models/Spreadsheet');
-const Sheet = require('../models/Sheet');
+const Sheets = require('../models/Sheets');
 
 const root = {
   user(userName) {
     return new User(userName);
   },
 
-  sheet(sheetName) {
-    return new Sheet(sheetName);
+  sheets(spreadsheetId, sheetName) {
+    return new Sheets(spreadsheetId, sheetName);
   },
 
   spreadsheet(spreadsheetId) {
