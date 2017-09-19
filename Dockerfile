@@ -5,6 +5,6 @@ WORKDIR app
 
 ADD . .
 
-EXPOSE 8003
+EXPOSE 8000
 
 CMD ["npm", "run", "dev"]
