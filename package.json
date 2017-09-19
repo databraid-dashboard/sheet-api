@@ -10,7 +10,8 @@
     "down": "scripts/down",
     "lint": "scripts/lint",
     "production-lint": "scripts/production-lint",
-    "production-start": "scripts/production-start"
+    "production-test": "scripts/production-test",
+    "start": "scripts/production-start"
   },
   "author": "",
   "license": "MIT",
