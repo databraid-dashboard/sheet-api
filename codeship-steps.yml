@@ -1,0 +1,12 @@
+- service: sheet-api
+  command: npm run production-lint
+- service: sheet-api
+  command: npm run production-test
+- service: sheet-api
+  type: push
+  image_name: databraiddb/sheet-api
+  encrypted_dockercfg_path: dockercfg.encrypted
+- service: awsdeployment
+  command: aws ecs register-task-definition --cli-input-json file:///deploy/tasks/sheet-api.json
+- service: awsdeployment
+  command: aws ecs update-service --cluster databraid-cluster --service sheet-api-service --task-definition sheet-api
