@@ -15,11 +15,11 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_SHEETS_CLIENT_ID;
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_SHEETS_CLIENT_SECRET;
+const API_BASE_URL= process.env.API_BASE_URL;
 /* eslint-disable no-unused-vars */
 // NOTE these variables will be used once the OAuth strategy begins, not before
 const CALLBACK_URL = process.env.GOOGLE_SHEETS_URL;
 const PROFILE_ID = process.env.GOOGLE_SHEETS_PROFILE_ID;
-
 app.use('/', partials());
 app.use(cors());
 app.use(bodyParser.json());
@@ -48,7 +48,7 @@ app.use(passport.session());
 passport.use(new GoogleStrategy({
   clientID: GOOGLE_CLIENT_ID,
   clientSecret: GOOGLE_CLIENT_SECRET,
-  callbackURL: 'http://localhost:8003/auth/google/callback',
+  callbackURL: `${API_BASE_URL}/auth/google/callback`,
 
 },
   ((accessToken, refreshToken, profile, done) => {
