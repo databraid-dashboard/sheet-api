@@ -29,14 +29,16 @@
     "express-partials": "0.3.0",
     "express-session": "1.15.5",
     "graphql": "0.10.5",
+    "isomorphic-fetch": "2.2.1",
+    "node-fetch": "1.7.3",
     "morgan": "1.8.2",
     "nodemon": "1.11.0",
     "passport": "0.3.2",
-    "passport-google-oauth20": "1.0.0"
+    "passport-google-oauth20": "1.0.0",
+    "whatwg-fetch": "2.0.3"
   },
   "devDependencies": {
     "chai": "4.1.0",
-    "dotenv": "^4.0.0",
     "mocha": "3.4.2",
     "nock": "9.0.14",
     "sinon": "3.2.1",
