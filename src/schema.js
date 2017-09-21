@@ -1,17 +1,15 @@
 const { buildSchema } = require('graphql');
 
+
 const schema = buildSchema(`
-  type User {
-    userName: String!
-  }
 
   type Spreadsheet {
     spreadsheetId: String
-    sheets: [Sheet]
+    spreadSheetName: String
+    sheets: [String]
   }
   type Sheets {
     spreadsheetId: String
-    sheetName: String
     sheets: [Sheet]
   }
 
@@ -23,7 +21,6 @@ const schema = buildSchema(`
   }
 
   type Query {
-    user(userName: String): User
     sheets(spreadsheetId: String, sheetName: String): Sheets
     spreadsheet(spreadsheetId: String): Spreadsheet
   }

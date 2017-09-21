@@ -1,17 +1,23 @@
-const data = require('../mockdata');
-const Sheet = require('./Sheet');
+
+const fetch = require('isomorphic-fetch');
 /* eslint-disable class-methods-use-this */
-
-
+function getJson(response) {
+  return response.json();
+}
 class Spreadsheet {
-  constructor(spreadsheetId) {
+  constructor({ spreadsheetId }) {
     this.spreadsheetId = spreadsheetId;
-    this.spreadSheetData = data.SPREADSHEET_DATA;
+    this.spreadSheetUrl = `https://sheets.googleapis.com/v4/spreadsheets/${this.spreadsheetId}?access_token=${process.env.TKN}`;
+  }
+  get spreadSheetName() {
+    return fetch(this.spreadSheetUrl)
+      .then(response => getJson(response))
+      .then(data => data.properties.title);
   }
   get sheets() {
-    // const sheetNames = this.spreadSheetData.sheets.map(sheet => sheet.properties.title);
-    const sheetDataArr = [data.SHEET1_DATA, data.SHEET2_DATA];
-    return sheetDataArr.map(sheetData => new Sheet(sheetData));
+    return fetch(this.spreadSheetUrl)
+      .then(response => getJson(response))
+      .then(data => data.sheets.map(sheet => sheet.properties.title));
   }
 }
 
