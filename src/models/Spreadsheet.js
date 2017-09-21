@@ -12,12 +12,14 @@ class Spreadsheet {
   get spreadSheetName() {
     return fetch(this.spreadSheetUrl)
       .then(response => getJson(response))
-      .then(data => data.properties.title);
+      .then(data => data.properties.title)
+      .catch(err => err);
   }
   get sheets() {
     return fetch(this.spreadSheetUrl)
       .then(response => getJson(response))
-      .then(data => data.sheets.map(sheet => sheet.properties.title));
+      .then(data => data.sheets.map(sheet => sheet.properties.title))
+      .catch(err => err);
   }
 }
 

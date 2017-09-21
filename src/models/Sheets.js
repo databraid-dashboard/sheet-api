@@ -20,9 +20,10 @@ class Sheets {
   getSheetByName() {
     return fetch(this.sheetUrl)
       .then(response => getJson(response))
-      .then(data => [new Sheet(data)]);
+      .then(data => [new Sheet(data)])
+      .catch(err => err);
   }
-  async getAllUserSheets() {
+  getAllUserSheets() {
     return fetch(this.spreadSheetUrl)
       .then(getJson)
       .then(response =>
@@ -31,7 +32,8 @@ class Sheets {
       .then(promiseArray => Promise.all(promiseArray))
       .then(responses => responses.map(response => response.json()))
       .then(responses => Promise.all(responses))
-      .then(createSheetInstances);
+      .then(createSheetInstances)
+      .catch(err => err);
   }
 }
 
