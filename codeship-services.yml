@@ -1,0 +1,10 @@
+awsdeployment:
+  image: codeship/aws-deployment
+  encrypted_env_file: aws-deployment.env.encrypted
+  volumes:
+    - ./:/deploy
+
+sheet-api:
+  build:
+    image: databraiddb/sheet-api
+    dockerfile: Dockerfile
