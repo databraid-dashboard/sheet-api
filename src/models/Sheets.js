@@ -33,7 +33,7 @@ class Sheets {
       .then(responses => responses.map(response => response.json()))
       .then(responses => Promise.all(responses))
       .then(createSheetInstances)
-      .catch(err => console.log(err));
+      .catch(err => err);
   }
 }
 
