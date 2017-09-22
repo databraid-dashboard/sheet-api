@@ -14,10 +14,10 @@ const schema = buildSchema(`
   }
 
   type Sheet {
-    sheetName: String
     range: String
     majorDimension: String
     values: [[String]]
+    sheetName: String
   }
 
   type Query {
