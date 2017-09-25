@@ -2,7 +2,6 @@
 
 # Databraid Sheet API
 
-Use this repo as a starter repo for developing API servers without Postgres
 
 ## Usage
 
