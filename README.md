@@ -1,12 +1,11 @@
 [ ![Codeship Status for databraid-dashboard/sheet-api](https://app.codeship.com/projects/ea3e8280-7fa4-0135-2d31-72fb077510aa/status?branch=master)](https://app.codeship.com/projects/246443)
 
-# Databraid API Starter Repo Without Postgres
+# Databraid Sheet API
 
-Use this repo as a starter repo for developing API servers without Postgres
 
 ## Usage
 
-Before beginning make sure you have Docker installed and running, then do:
+Before beginning make sure you have [Docker](https://www.docker.com/) installed and running, then do:
 
 ```
 npm i
