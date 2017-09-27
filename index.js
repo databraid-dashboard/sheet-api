@@ -69,8 +69,8 @@ app.get('/auth/google',
 app.get('/auth/google/callback',
   passport.authenticate('google'),
   (req, res) => {
-    res.cookie('userName', process.env.USERNAME);
-    res.cookie('profileID', process.env.PROFILE_ID);
+    res.cookie('userName', process.env.USERNAME, { domain: process.env.DOMAIN_FOR_COOKIES || 'localhost' });
+    res.cookie('profileID', process.env.PROFILE_ID, { domain: process.env.DOMAIN_FOR_COOKIES || 'localhost' });
     res.redirect(process.env.FRONT_END_BASE_URL);
   });
 
