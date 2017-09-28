@@ -26,9 +26,9 @@ class Sheets {
   getAllUserSheets() {
     return fetch(this.spreadSheetUrl)
       .then(getJson)
-      .then(response =>
-        response.sheets.map(sheet => sheet.properties.title))
-      .then(sheetNames => sheetNames.map(sheetName => fetch(`https://sheets.googleapis.com/v4/spreadsheets/${this.spreadsheetId}/values/${sheetName}!A1:ZZ?access_token=${process.env.TKN}`)))
+      .then(response => response.sheets.map(sheet => sheet.properties.title))
+      .then(sheetNames => sheetNames.map(sheetName => fetch(`https://sheets.googleapis.com/v4/spreadsheets/${this.spreadsheetId}/values/${sheetName}!A1:ZZ?access_token=${process.env.TKN}`),
+      ))
       .then(promiseArray => Promise.all(promiseArray))
       .then(responses => responses.map(response => response.json()))
       .then(responses => Promise.all(responses))
